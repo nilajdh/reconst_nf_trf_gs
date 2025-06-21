@@ -1,0 +1,19 @@
+expname = my_data               # 实验名称（自定义）
+basedir = ./logs                # 日志保存路径
+datadir = ./longq_data/longq_data          # 你的数据集路径
+
+dataset_type = blender          # 保持blender格式（因为你有transforms.json）
+white_bkgd = True               # 根据你的图像背景调整（通常设为True）
+
+no_batching = True              # 非批处理模式（适合内存较小的GPU）
+use_viewdirs = True             # 使用视图方向
+lrate_decay = 500               # 学习率衰减步数
+
+N_samples = 32                  # 每条光线上的粗采样点数量
+N_importance = 64              # 每条光线上的精细采样点数量
+N_rand = 1024                   # 每次迭代随机采样的光线数量
+
+precrop_iters = 500             # 预裁剪迭代次数（帮助早期收敛）
+precrop_frac = 0.5              # 预裁剪比例
+
+half_res = True                 # 使用半分辨率（降低内存需求）
